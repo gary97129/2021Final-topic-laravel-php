@@ -1,32 +1,32 @@
 @extends('layouts.master')
 @section('content')
-    <!doctype html>
-    <html lang="en">
-        <head>
-            <!-- Required meta tags -->
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <div class="container mt-5">
+        <h1 class="text-center">
+                軒丞的手肘好癢
+        </h1>
+    </div>
 
-            <!-- Bootstrap CSS -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
-            <title>Hello, world!</title>
-        </head>
-        <body>
-        <h1>軒丞手肘癢</h1>
-
-
-
-
-
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-        </body>
-    </html>
+    <article class="bg-secondary py-5 text-center">
+        <!-- footerInfo -->
+        <div class="d-flex justify-content-center align-items-center flex-wrap">
+            <a class="text-light border p-3 m-3" href="https://www.facebook.com/tsvts/" target="_blank">
+                <i class="fab fa-facebook fa-3x"></i><br>泰山職業訓練場
+            </a>
+            <a href="https://tkyhkm.wda.gov.tw/Default.aspx" target="_blank">
+                <img src="https://ws.wda.gov.tw/001/Upload/308/sites/pagebackimage/366d4144-bdac-4a20-a1f2-b0846004efc0.png" alt="勞動部勞動力發展署北基宜花金馬分署全球資訊網">
+            </a>
+            <a href="https://www.taiwanjobs.gov.tw/home/new_index.aspx" target="_blank">
+                <img src="https://icmp-ws.chiayi.gov.tw/001/Upload/408/relpic/9352/408618/8e7e31cb-201c-4b6f-802f-920fb8f06e28@710x470.png" alt="台灣就業通">
+            </a>
+        </div>
+        <div>
+            <a class="text-light" href="tel:02-2901-8274">電話：02-2901-8274</a>　｜　
+            <span class="text-light">傳真：02-2908-4773</span>　｜　
+            <a class="text-light" href="mainto:service@toyugi.com.tw">信箱：service@toyugi.com.tw</a>
+            <address>
+                <a class="text-light" href="https://goo.gl/maps/NDzTUToVSbMQYLwv6" target="_blank">243 新北市泰山區貴子里致遠新村 55 之 1 號</a>
+            </address>
+        </div>
+    </article>
 
 @endsection
