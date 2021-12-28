@@ -1,10 +1,51 @@
 @extends('layouts.master')
 @section('content')
     <div class="container mt-5">
-        <h1 class="text-center">
-                軒丞的手肘好癢
-        </h1>
+        <div class="text-center">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                    <li data-target="#demo" data-slide-to="5"></li>
+                    <li data-target="#demo" data-slide-to="6"></li>
+                    <li data-target="#demo" data-slide-to="7"></li>
+                </ul>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="item_images/title/0.png">
+                    </div>
+                    @for($i = 1; $i <= 7; $i++)
+                        <div class="carousel-item">
+                            <img src="item_images/title/{{$i}}.png">
+                        </div>
+                    @endfor
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
 
     <article class="bg-secondary py-5 text-center">
         <!-- footerInfo -->
