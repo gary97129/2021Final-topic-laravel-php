@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\MyController@get_index_page') -> name('get_index_page');
+Route::get('/', [App\Http\Controllers\MyController::Class,'get_index_page']) -> name('get_index_page');
