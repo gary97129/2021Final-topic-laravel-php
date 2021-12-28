@@ -17,8 +17,8 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('description')->nullable();
-            $table->string('image')->default("test")->nullable();
-            $table->string('price')->nullable();
+            $table->string('image')->default("item_images/default.jpg")->nullable();
+            $table->bigInteger('price')->nullable();
         });
     }
 
