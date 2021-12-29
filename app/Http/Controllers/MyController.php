@@ -40,13 +40,53 @@ class MyController extends Controller
         return view('pages.create');
     }
 
+
     public function get_signup_page()
     {
-        return view('pages.signup');
+        $not_match=false;
+        $same_account=false;
+        $same_email=false;
+        $signup_done=false;
+        return view('pages.signup',compact('not_match','same_email','same_account','signup_done'));
     }
-
     public function store_signup_user(Request $request)
     {
-        dd($request);
+        $not_match=false;
+        $same_account=false;
+        $same_email=false;
+        $signup_done=false;
+        $DB_data=DB::table('users')->get();
+        $account=$request->get('account');
+        $password=$request->get('password');
+        $password2=$request->get('password2');
+        $name=$request->get('name');
+        $email=$request->get('email');
+
+        if ($password != $password2){
+            $not_match=true;
+            return view('pages.signup',compact('not_match','same_email','same_account','signup_done'));
+        }
+        else{
+            foreach ($DB_data as $row){
+                if ($row->account==$account){
+                    $same_account=true;
+                }
+                if ($row->email==$email){
+                    $same_email=true;
+                }
+                if ($same_account==true or $same_email==true){
+                    return view('pages.signup',compact('not_match','same_email','same_account','signup_done'));
+                }
+            }
+
+            DB::table('users')->insert([
+                'account'=>$account,
+                'password'=>$password,
+                'name'=>$name,
+                'email'=>$email
+            ]);
+            $signup_done=true;
+            return view('pages.signup',compact('not_match','same_email','same_account','signup_done','account','email'));
+        }
     }
 }

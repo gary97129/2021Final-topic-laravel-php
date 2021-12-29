@@ -12,9 +12,9 @@
                 <a class="nav-link text-success" href="{{route('get_create_page')}}">新增商品<span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <ul class="navbar-nav my-2 my-lg-0">
+        <ul class="navbar-nav my-2 my-lg-0 mr-1">
             <li class="nav-item">
-                <a class="nav-link text-dark" href="{{route('get_signup_page')}}">註冊</a>
+                <a class="btn btn-outline-info" href="{{route('get_signup_page')}}" role="button">註冊</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
