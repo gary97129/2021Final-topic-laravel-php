@@ -39,4 +39,14 @@ class MyController extends Controller
 
         return view('pages.create');
     }
+
+    public function get_signup_page()
+    {
+        return view('pages.signup');
+    }
+
+    public function store_signup_user(Request $request)
+    {
+        dd($request);
+    }
 }
