@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\DB;
 class MyController extends Controller
 {
     function get_index_page(){
-
-        return view('pages.index');
+        $data = DB::table('items')->get();
+//        dd($data);
+        return view('pages.index',compact('data',$data));
     }
 
     public function get_create_page()
