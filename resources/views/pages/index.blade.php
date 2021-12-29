@@ -53,9 +53,9 @@
         </div>
 
 
-        <ul class="pagination justify-content-center">
-            <li class="page-item " id = "act1"><a class="page-link" onclick="change_page('1')" style="color:black;">1</a></li>
-            <li class="page-item " id = "act2"><a class="page-link" onclick="change_page('2')" style="color:black;">2</a></li>
+        <ul class="pagination justify-content-center" style="font-size: 1.5rem;">
+            <li class="page-item " id = "act1"><a class="page-link " id="page_1" onclick="change_page('1')" style="cursor: pointer;">1</a></li>
+            <li class="page-item " id = "act2"><a class="page-link " id="page_2" onclick="change_page('2')" style="cursor: pointer;">2</a></li>
         </ul>
 
     </div>
@@ -91,6 +91,7 @@
         }
     </script>
     <script>
-        document.getElementById('act{{$pa/20}}').className+='active'
+        document.getElementById('act{{$pa/20}}').className+='active';
+        document.getElementById('page_{{$pa/20}}').className+='page_y';
     </script>
 @endsection
