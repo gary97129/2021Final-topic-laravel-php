@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class MyController extends Controller
 {
     function get_index_page(){
+
         return view('pages.index');
     }
 

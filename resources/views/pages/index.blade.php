@@ -45,8 +45,6 @@
 
 
 
-
-
     <article class="bg-secondary py-5 text-center">
         <!-- footerInfo -->
         <div class="d-flex justify-content-center align-items-center flex-wrap">
