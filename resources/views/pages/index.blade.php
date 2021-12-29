@@ -54,8 +54,8 @@
 
 
         <ul class="pagination justify-content-center">
-            <li class="page-item act1"><a class="page-link" onclick="change_page('1')" style="color:black;">1</a></li>
-            <li class="page-item act2"><a class="page-link" onclick="change_page('2')" style="color:black;">2</a></li>
+            <li class="page-item " id = "act1"><a class="page-link" onclick="change_page('1')" style="color:black;">1</a></li>
+            <li class="page-item " id = "act2"><a class="page-link" onclick="change_page('2')" style="color:black;">2</a></li>
         </ul>
 
     </div>
@@ -89,5 +89,8 @@
         function change_page(id) {
             window.location.href = `{{route('get_index_page')}}?id=${id}`;
         }
+    </script>
+    <script>
+        document.getElementById('act{{$pa/20}}').className+='active'
     </script>
 @endsection
