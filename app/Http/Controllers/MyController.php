@@ -21,7 +21,7 @@ class MyController extends Controller
         $description = $request->get('description');
         $image = $request->get('image');
         if ($image == ''){
-            $image="item_images/default.jpg";
+            $image="default.jpg";
         }
 
         $price = $request->get('price');

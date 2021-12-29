@@ -2,7 +2,7 @@
 @section('content')
     <div class="container mt-5">
         <div class="text-center">
-            <div id="demo" class="carousel slide" data-ride="carousel">
+            <div id="demo" class="carousel slide" data-ride="carousel"  style="width: 900px;margin:0 auto;">
 
                 <!-- 指示符 -->
                 <ul class="carousel-indicators">
