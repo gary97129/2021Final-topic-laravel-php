@@ -17,3 +17,6 @@ Route::get('/', [App\Http\Controllers\MyController::Class,'get_index_page']) -> 
 
 Route::get('/create',[\App\Http\Controllers\MyController::class,'get_create_page'])->name('get_create_page');
 Route::post('/create',[\App\Http\Controllers\MyController::class,'store_create_item'])->name('store_create_item');
+
+Route::get('/signup',[\App\Http\Controllers\MyController::class,'get_signup_page'])->name('get_signup_page');
+Route::post('/signup',[\App\Http\Controllers\MyController::class,'store_signup_user'])->name('store_signup_user');
