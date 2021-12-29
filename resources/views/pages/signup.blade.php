@@ -11,11 +11,11 @@
                 </div>
                 <div class="col-6 mb-5">
                     <label>密碼</label>
-                    <input type="text" class="form-control is-invalid" name="password" required>
+                    <input type="password" class="form-control is-invalid" name="password" required>
                 </div>
                 <div class="col-6 mb-5">
                     <label>密碼確認</label>
-                    <input type="text" class="form-control is-invalid" name="password2" required>
+                    <input type="password" class="form-control is-invalid" name="password2" required>
                 </div>
                 <div class="col-6 mb-5">
                     <label>姓名</label>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-6 mb-5">
                     <label>email</label>
-                    <input type="text" class="form-control is-invalid" name="email" required>
+                    <input type="email" class="form-control is-invalid" name="email" required>
                 </div>
             </div>
             <button class="btn btn-outline-info btn-block" type="submit">註冊</button>
