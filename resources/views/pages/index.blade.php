@@ -90,8 +90,4 @@
             window.location.href = `{{route('get_index_page')}}?id=${id}`;
         }
     </script>
-    <script>
-        var a1 = document.querySelector('.act{{$pa/20}}');
-        a1.setAttribute('class',' active');
-    </script>
 @endsection

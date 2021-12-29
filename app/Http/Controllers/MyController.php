@@ -9,6 +9,7 @@ class MyController extends Controller
 {
     function get_index_page(Request $request){
         $pa = $request -> get('id');
+        if ($pa == null){$pa=1;}
         $pa = $pa*20;
         $data = DB::table('items')->get();
 //        dd($data);
