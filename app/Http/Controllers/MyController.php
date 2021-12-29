@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\DB;
 
 class MyController extends Controller
 {
-    function get_index_page(){
+    function get_index_page(Request $request){
+        $pa = $request -> get('id');
+        $pa = $pa*20;
         $data = DB::table('items')->get();
 //        dd($data);
-        return view('pages.index',compact('data',$data));
+        return view('pages.index',compact('data','pa'));
     }
 
     public function get_create_page()
