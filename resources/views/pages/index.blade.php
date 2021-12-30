@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div id="demo" class="carousel slide mt-5 mb-5 col-9" data-ride="carousel"  style="margin:0 auto;">
+            <div id="demo" class="carousel slide col-9 mt-5 mb-5" data-ride="carousel"  style="margin:0 auto;">
 
                 <!-- 指示符 -->
                 <ul class="carousel-indicators">
@@ -16,7 +16,7 @@
                     <li data-target="#demo" data-slide-to="7"></li>
                 </ul>
 
-                <!-- 轮播图片 -->
+                <!-- 輪播圖片 -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="item_images/title/0.png" class="img-fluid">
@@ -54,8 +54,9 @@
 
 
         <ul class="pagination justify-content-center" style="font-size: 1.5rem;">
-            <li class="page-item " id = "act1"><a class="page-link " id="page_1" onclick="change_page('1')" style="cursor: pointer;">1</a></li>
-            <li class="page-item " id = "act2"><a class="page-link " id="page_2" onclick="change_page('2')" style="cursor: pointer;">2</a></li>
+            @for($i=1;$i<=$pa/20;$i++)
+                <li class="page-item " id = "act{{$i}}"><a class="page-link " id="page_{{$i}}" onclick="change_page('{{$i}}')" style="cursor: pointer;">{{$i}}</a></li>
+            @endfor
         </ul>
 
     </div>
