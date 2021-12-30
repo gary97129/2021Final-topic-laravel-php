@@ -26,7 +26,7 @@
                     <a class="dropdown-item" href="#">購物車</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">登出</a>
+                    <a class="dropdown-item text-danger" href="#"><b>登出</b></a>
                 </div>
             </li>
 
