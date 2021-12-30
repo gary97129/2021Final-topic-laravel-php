@@ -20,8 +20,14 @@
             <li class="nav-item mr-2">
                 <a class="btn btn-outline-danger" href="{{route('get_signin_page')}}" >登入</a>
             </li>
-            <li class="nav-item">
-                <a class="btn bg-dark text-light" href="{{route('get_signin_page')}}" ><i class="fa fa-user" style="font-size: 25px;"></i></a>
+            <li class="nav-item dropdown">
+                <a class="btn bg-dark text-light" href="{{route('get_signin_page')}}" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="font-size: 25px;"></i></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">購物車</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">登出</a>
+                </div>
             </li>
 
         </ul>
