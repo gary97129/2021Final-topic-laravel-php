@@ -5,9 +5,9 @@
             <i class="fa fa-facebook-f" style="font-size:30px"></i>
         </a>
 
-        <a class="text-light" href="tel:02-2901-8274">電話：02-2901-8274</a>　｜　
+        <a class="text-light" href="tel:02-2901-8274">電話：04-1234-4321</a>　｜　
         <span class="text-light">傳真：02-2908-4773</span>　｜　
-        <a class="text-light" href="mainto:service@toyugi.com.tw">信箱：service@toyugi.com.tw</a>
+        <a class="text-light" href="mainto:g7546j@gmail.com">信箱：service@toyugi.com.tw</a>
     </div>
     <div>
         <address>
