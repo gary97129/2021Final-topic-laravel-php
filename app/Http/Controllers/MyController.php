@@ -89,4 +89,15 @@ class MyController extends Controller
             return view('pages.signup',compact('not_match','same_email','same_account','signup_done','account','email'));
         }
     }
+
+
+    public function get_signin_page()
+    {
+        return view('pages.signin');
+    }
+
+    public function signin_go(Request $request)
+    {
+
+    }
 }
