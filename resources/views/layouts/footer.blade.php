@@ -6,12 +6,12 @@
         </a>
 
         <a class="text-light" href="tel:02-2901-8274">電話：04-1234-4321</a>　｜　
-        <span class="text-light">傳真：02-2908-4773</span>　｜　
-        <a class="text-light" href="mainto:g7546j@gmail.com">信箱：service@toyugi.com.tw</a>
+        <span class="text-light">傳真：04-1234-4321</span>　｜　
+        <a class="text-light" href="mainto:g7546j@gmail.com">信箱：d54d65@gmail.com</a>
     </div>
     <div>
         <address>
-            <a class="text-light" href="https://goo.gl/maps/NDzTUToVSbMQYLwv6" target="_blank">243 新北市泰山區貴子里致遠新村 55 之 1 號</a>
+            <a class="text-light" href="https://goo.gl/maps/NDzTUToVSbMQYLwv6" target="_blank">台X市 XX區 XX路 X號</a>
         </address>
     </div>
 </article>
