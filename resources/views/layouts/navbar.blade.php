@@ -12,13 +12,13 @@
                 <a class="nav-link text-success" href="{{route('get_create_page')}}">新增商品<span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <ul class="navbar-nav my-2 my-lg-0 mr-1">
+        <ul class="navbar-nav my-2 my-lg-0 mr-3">
             <li class="nav-item">
                 <a class="btn btn-outline-info" href="{{route('get_signup_page')}}" role="button">註冊</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2 mr-3" type="search" placeholder="Search" aria-label="Search" style="max-width: 20rem;">
             <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
