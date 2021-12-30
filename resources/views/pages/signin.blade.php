@@ -12,6 +12,11 @@
                 <div class="col-8 mb-5">
                     <label>密碼</label>
                     <input type="password" class="form-control is-invalid" name="password" required>
+                    @if($not_match)
+                        <div class="invalid-feedback">
+                            帳號或密碼錯誤
+                        </div>
+                    @endif
                 </div>
             </div>
             <button class="btn btn-outline-info btn-block" type="submit">登入</button>
