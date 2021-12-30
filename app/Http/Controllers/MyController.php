@@ -111,11 +111,23 @@ class MyController extends Controller
 
     public function get_signin_page()
     {
-        return view('pages.signin');
+        $not_match=false;
+        return view('pages.signin',compact('not_match'));
     }
 
     public function signin_go(Request $request)
     {
-
+        $input_account=$request->get('account');
+        $input_password=$request->get('password');
+        $DB_data=DB::table('users')->get();
+        foreach ($DB_data as $row){
+            if ($row->account==$input_account and $row->password==$input_password){
+                $account=$row->account;
+                session()->put('account',$account);
+                return redirect()->route('get_index_page');
+            }
+        }
+        $not_match=true;
+        return view('pages.signin',compact('not_match'));
     }
 }
