@@ -27,7 +27,7 @@
                         <a class="dropdown-item" href="{{route('get_cart_page')}}">購物車</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#"><b>登出</b></a>
+                        <a class="dropdown-item text-danger" href="{{route('logout')}}"><b>登出</b></a>
                     </div>
                 </li>
             @endif

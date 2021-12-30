@@ -130,4 +130,11 @@ class MyController extends Controller
         $not_match=true;
         return view('pages.signin',compact('not_match'));
     }
+
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return redirect()->route('get_index_page');
+    }
 }
