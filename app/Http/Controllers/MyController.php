@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use function Sodium\add;
 
 class MyController extends Controller
 {
@@ -14,6 +15,23 @@ class MyController extends Controller
         $data = DB::table('items')->get();
 //        dd($data);
         return view('pages.index',compact('data','pa'));
+    }
+
+    function get_cart_page(Request $request){
+
+        $data = DB::table('users')
+            ->where('id',1)
+            ->first();
+        $data = explode(",",($data -> purchased));
+        $product = array();
+        foreach ($data as $id){
+            $good = DB::table('items')
+                ->where('id',$id)
+                ->first();
+            array_push($product,$good);
+        }
+
+        return view('pages.cart',compact('product'));
     }
 
     public function get_create_page()

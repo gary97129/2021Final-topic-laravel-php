@@ -21,9 +21,9 @@
                 <a class="btn btn-outline-info" href="{{route('get_signin_page')}}" >登入</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="btn bg-dark text-light" href="{{route('get_signin_page')}}" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="font-size: 25px;"></i></a>
+                <a class="btn bg-dark text-light" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="font-size: 25px;"></i></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">購物車</a>
+                    <a class="dropdown-item" href="{{route('get_cart_page')}}">購物車</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="#"><b>登出</b></a>

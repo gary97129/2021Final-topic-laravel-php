@@ -23,3 +23,5 @@ Route::post('/signup',[\App\Http\Controllers\MyController::class,'store_signup_u
 
 Route::get('/signin',[\App\Http\Controllers\MyController::class,'get_signin_page'])->name('get_signin_page');
 Route::post('/signin',[\App\Http\Controllers\MyController::class,'signin_go'])->name('signin_go');
+
+Route::get('/cart',[\App\Http\Controllers\MyController::class,'get_cart_page'])->name('get_cart_page');
