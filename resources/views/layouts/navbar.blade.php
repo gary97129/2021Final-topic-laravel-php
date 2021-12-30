@@ -15,10 +15,10 @@
         <ul class="navbar-nav my-2 my-lg-0 mr-3">
 
             <li class="nav-item mr-2">
-                <a class="btn btn-outline-info" href="{{route('get_signup_page')}}" >註冊</a>
+                <a class="btn btn-outline-danger" href="{{route('get_signup_page')}}" >註冊</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="btn btn-outline-danger" href="{{route('get_signin_page')}}" >登入</a>
+                <a class="btn btn-outline-info" href="{{route('get_signin_page')}}" >登入</a>
             </li>
             <li class="nav-item">
                 <a class="btn bg-dark text-light" href="{{route('get_signin_page')}}" ><i class="fa fa-user" style="font-size: 25px;"></i></a>
