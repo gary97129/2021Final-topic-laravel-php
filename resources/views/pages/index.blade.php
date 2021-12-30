@@ -3,7 +3,6 @@
     <div class="container">
         <div class="row">
             <div id="demo" class="carousel slide col-9 mt-5 mb-5" data-ride="carousel"  style="margin:0 auto;">
-
                 <!-- 指示符 -->
                 <ul class="carousel-indicators">
                     <li data-target="#demo" data-slide-to="0" class="active"></li>

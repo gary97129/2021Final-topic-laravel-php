@@ -13,23 +13,24 @@
             </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0 mr-3">
-
-            <li class="nav-item mr-2">
-                <a class="btn btn-outline-danger" href="{{route('get_signup_page')}}" >註冊</a>
-            </li>
-            <li class="nav-item mr-2">
-                <a class="btn btn-outline-info" href="{{route('get_signin_page')}}" >登入</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="btn bg-dark text-light" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="font-size: 25px;"></i></a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('get_cart_page')}}">購物車</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#"><b>登出</b></a>
-                </div>
-            </li>
-
+            @if(session('account') == null)
+                <li class="nav-item mr-2">
+                    <a class="btn btn-outline-danger" href="{{route('get_signup_page')}}" >註冊</a>
+                </li>
+                <li class="nav-item mr-2">
+                    <a class="btn btn-outline-info" href="{{route('get_signin_page')}}" >登入</a>
+                </li>
+            @else
+                <li class="nav-item dropdown">
+                    <a class="btn bg-dark text-light" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="font-size: 25px;"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('get_cart_page')}}">購物車</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><b>登出</b></a>
+                    </div>
+                </li>
+            @endif
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2 mr-3" type="search" placeholder="Search" aria-label="Search" style="max-width: 20rem;">
