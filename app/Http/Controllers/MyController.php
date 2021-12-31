@@ -141,13 +141,21 @@ class MyController extends Controller
     public function changepwd(Request $request)
     {
         $not_match=false;
-        $password=$request->get('password');
-        $password2=$request->get('password2');
-        if ($password != $password2){
-            $not_match=true;
-            return view('pages.changePWD',compact('not_match'));
+        $account=$request->get('account');
+        $oldpassword=$request->get('oldpassword');
+        $newpassword=$request->get('newpassword');
+        $DB_data=DB::table('users')->get();
+        foreach ($DB_data as $row){
+            if ($row->account==$account and $row->password==$oldpassword){
+                DB::table('users')
+                    ->where('account',$account)
+                    ->update([
+                        'password' => $newpassword
+                    ]);
+                return "true";
+            }
         }
-
+        return "false";
     }
 
     public function get_changepwd_page()
