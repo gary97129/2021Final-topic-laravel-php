@@ -137,4 +137,21 @@ class MyController extends Controller
         $request->session()->flush();
         return redirect()->route('get_index_page');
     }
+
+    public function changepwd(Request $request)
+    {
+        $not_match=false;
+        $password=$request->get('password');
+        $password2=$request->get('password2');
+        if ($password != $password2){
+            $not_match=true;
+            return view('pages.changePWD',compact('not_match'));
+        }
+
+    }
+
+    public function get_changepwd_page()
+    {
+        return view('pages.changePWD');
+    }
 }

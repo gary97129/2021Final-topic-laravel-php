@@ -27,3 +27,7 @@ Route::post('/signin',[\App\Http\Controllers\MyController::class,'signin_go'])->
 Route::get('/cart',[\App\Http\Controllers\MyController::class,'get_cart_page'])->name('get_cart_page');
 
 Route::get('/logout',[\App\Http\Controllers\MyController::class,'logout'])->name('logout');
+
+//changepwd
+Route::get('/changepwd',[\App\Http\Controllers\MyController::class,'get_changepwd_page'])->name('get_changepwd_page');
+Route::post('/changepwd',[\App\Http\Controllers\MyController::class,'changepwd'])->name('changepwd');
