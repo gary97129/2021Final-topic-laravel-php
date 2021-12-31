@@ -24,8 +24,11 @@
                 <li class="nav-item dropdown">
                     <a class="btn bg-dark text-light" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="font-size: 25px;"></i></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <b class="ml-4 text-primary">
+                            {{session('account')}}
+                        </b>
                         <a class="dropdown-item" href="{{route('get_cart_page')}}">購物車</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">更改密碼</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="{{route('logout')}}"><b>登出</b></a>
                     </div>
