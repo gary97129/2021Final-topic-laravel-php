@@ -13,7 +13,7 @@
                             <img src="{{$row->image}}" class="card-img-top" alt="..." style="max-width: 30rem;">
                         </div>
                         <div class="col-8">
-                            <h4 class="card-title">{{$row->description}}</h4>
+                            <h1 class="card-title">{{$row->name}}</h1>
                         </div>
                         <div class="col-2">
 

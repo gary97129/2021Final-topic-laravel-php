@@ -28,9 +28,9 @@ class MyController extends Controller
                 ->where('account', session('account'))
                 ->first();
             DB::table('users')
-                ->where('account', session(['account']))
+                ->where('account', session('account'))
                 ->update([
-                    'purchased' => ($pur->purchased . $add . ",")
+                    'purchased' => $pur->purchased . $add . ","
                 ]);
         }
         return view('pages.index',compact('data','pa'));
