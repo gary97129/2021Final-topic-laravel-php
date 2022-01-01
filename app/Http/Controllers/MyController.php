@@ -13,22 +13,44 @@ class MyController extends Controller
         if ($pa == null){$pa=1;}
         $pa = $pa*20;
         $data = DB::table('items')->get();
+        $search_content = $request->get('search_content');
+        $data = DB::table('items');
+        if ($search_content) {
+            $data->orwhere('name','like','%'. $search_content .'%');
+            $data->orwhere('description','like','%'. $search_content .'%');
+        }
+        $data = $data->get();
 //        dd($data);
+
+        $add = $request -> get('cart');
+        if ($add != null){
+            $pur = DB::table('users')
+                ->where('account', session('account'))
+                ->first();
+            DB::table('users')
+                ->where('account', session(['account']))
+                ->update([
+                    'purchased' => ($pur->purchased . $add . ",")
+                ]);
+        }
         return view('pages.index',compact('data','pa'));
     }
 
-    function get_cart_page(Request $request){
 
+    function get_cart_page(Request $request){
+        $account = session('account');
         $data = DB::table('users')
-            ->where('id',1)
+            ->where('account',$account)
             ->first();
         $data = explode(",",($data -> purchased));
         $product = array();
         foreach ($data as $id){
-            $good = DB::table('items')
-                ->where('id',$id)
-                ->first();
-            array_push($product,$good);
+            if($id != ""){
+                $good = DB::table('items')
+                    ->where('id',$id)
+                    ->first();
+                array_push($product,$good);
+            }
         }
 
         return view('pages.cart',compact('product'));
