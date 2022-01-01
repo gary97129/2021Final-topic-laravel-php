@@ -35,8 +35,8 @@
                 </li>
             @endif
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 mr-3" type="search" placeholder="Search" aria-label="Search" style="max-width: 20rem;">
+        <form class="form-inline my-2 my-lg-0" action="{{route('get_index_page')}}">
+            <input class="form-control mr-sm-2 mr-3" type="search" placeholder="Search" aria-label="Search" name="search_content" style="max-width: 20rem;">
             <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>

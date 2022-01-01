@@ -42,9 +42,17 @@
                     <div class="card mb-5 col-lg-3 col-md-4 col-6" style="width: 18rem;">
                         <img src="{{$data[$i]->image}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{$data[$i]->description}}</h5>
-                            <p class="card-text text-right">NT${{$data[$i]->price}}</p>
-                            <div class="text-center"><a href="#" class="btn btn-info  btn-lg btn-block">加入購物車</a></div>
+                            <h1 class="card-title">{{$data[$i]->name}}</h1>
+                            <p class="card-text">
+                            @if(strlen($data[$i]->description) <= 5)
+                                {{$data[$i]->description}}
+                            @else
+                                {{substr($data[$i]->description,0,5)}} . . .
+                                <p><a href="#">看詳情</a></p>
+                            @endif
+                            </p>
+                            <h4 class="card-text text-right">NT${{$data[$i]->price}}</h4>
+                            <div class="text-center" ><a onclick=add_cart({{$data[$i]->id}}) class="btn btn-info  btn-lg btn-block">加入購物車</a></div>
                         </div>
                     </div>
                 @endif
@@ -64,6 +72,9 @@
     <script>
         function change_page(id) {
             window.location.href = `{{route('get_index_page')}}?id=${id}`;
+        }
+        function add_cart(id) {
+            window.location.href = `{{route('get_index_page')}}?cart=${id}`;
         }
     </script>
     <script>
