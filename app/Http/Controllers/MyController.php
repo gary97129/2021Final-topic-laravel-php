@@ -159,4 +159,39 @@ class MyController extends Controller
         $request->session()->flush();
         return redirect()->route('get_index_page');
     }
+
+    public function changepwd(Request $request)
+    {
+        $not_match=false;
+        $account=$request->get('account');
+        $oldpassword=$request->get('oldpassword');
+        $newpassword=$request->get('newpassword');
+        $newpassword2=$request->get('newpassword2');
+
+        if ($newpassword != $newpassword2){
+            $change_done = false;
+            return view('pages.changePWD',compact('change_done'));
+        }
+        else{
+            $DB_data=DB::table('users')->get();
+            foreach ($DB_data as $row){
+                if ($row->account==$account and $row->password==$oldpassword){
+                    DB::table('users')
+                        ->where('account',$account)
+                        ->update([
+                            'password' => $newpassword
+                        ]);
+                    $change_done = true;
+                    return view('pages.changePWD',compact('change_done'));
+                }
+            }
+            $change_done = false;
+            return view('pages.changePWD',compact('change_done'));
+        }
+    }
+
+    public function get_changepwd_page()
+    {
+        return view('pages.changePWD');
+    }
 }
