@@ -16,7 +16,7 @@
                                 @else
                                     item_images/{{$row->image}}
                                 @endif
-                            " class="card-img-top" alt="..." style="max-width: 30rem;">
+                                " class="card-img-top" alt="..." style="max-width: 30rem;">
                         </div>
                         <div class="col-8">
                             <h1 class="card-title">{{$row->name}}</h1>
