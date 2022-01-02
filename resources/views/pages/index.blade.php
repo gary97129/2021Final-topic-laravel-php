@@ -74,7 +74,11 @@
             window.location.href = `{{route('get_index_page')}}?id=${id}`;
         }
         function add_cart(id) {
-            window.location.href = `{{route('get_index_page')}}?cart=${id}`;
+            @if(session('account') == null)
+                window.location.href = `{{route('get_signin_page')}}`;
+            @else
+                window.location.href = `{{route('get_index_page')}}?cart=${id}`;
+            @endif
         }
     </script>
     <script>
