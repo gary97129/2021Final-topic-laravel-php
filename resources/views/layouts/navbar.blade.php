@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-info" style="background-color: #d4ed94;">
+<nav class="navbar sticky-top navbar-expand-md navbar-info" style="background-color: #d4ed94;">
     <a class="navbar-brand text-success" style="font-size: 2.5rem;" href="{{route('get_index_page')}}">首頁</a>
     <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
@@ -8,9 +8,11 @@
 
     <div class="collapse navbar-collapse" style="font-size: 1.2rem;" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            @if(session('account') != null)
             <li class="nav-item active">
                 <a class="nav-link text-success" href="{{route('get_create_page')}}">新增商品<span class="sr-only">(current)</span></a>
             </li>
+            @endif
         </ul>
         <ul class="navbar-nav my-2 my-lg-0 mr-3">
             @if(session('account') == null)
