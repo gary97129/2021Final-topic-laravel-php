@@ -40,7 +40,13 @@
             @for($i =$pa-20;$i<$pa;$i++)
                 @if($i < count($data))
                     <div class="card mb-5 col-lg-3 col-md-4 col-6" style="width: 18rem;">
-                        <img src="{{$data[$i]->image}}" class="card-img-top" alt="...">
+                        <img src="
+                            @if(stristr($data[$i]->image,'http') != false)
+                                {{$data[$i]->image}}
+                            @else
+                                item_images/{{$data[$i]->image}}
+                            @endif
+                        "  class="card-img-top" alt="...">
                         <div class="card-body">
                             <h1 class="card-title">{{$data[$i]->name}}</h1>
                             <p class="card-text">

@@ -10,7 +10,13 @@
                 <div class="alert alert-primary" role="alert">
                     <div class="row">
                         <div class="col-2">
-                            <img src="{{$row->image}}" class="card-img-top" alt="..." style="max-width: 30rem;">
+                            <img src="
+                                @if(stristr($row->image,'http') != false)
+                                    {{$row->image}}
+                                @else
+                                    item_images/{{$row->image}}
+                                @endif
+                            " class="card-img-top" alt="..." style="max-width: 30rem;">
                         </div>
                         <div class="col-8">
                             <h1 class="card-title">{{$row->name}}</h1>
