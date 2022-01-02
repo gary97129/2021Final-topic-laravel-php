@@ -162,30 +162,32 @@ class MyController extends Controller
 
     public function changepwd(Request $request)
     {
-        $not_match=false;
-        $account=$request->get('account');
+        $account=session('account');
         $oldpassword=$request->get('oldpassword');
         $newpassword=$request->get('newpassword');
         $newpassword2=$request->get('newpassword2');
+        $DB_data=DB::table('users')->get();
+        foreach ($DB_data as $row){
+            if ($row->account==$account){
+                $DB_oldpassword=$row->password;
+            }
+        }
 
-        if ($newpassword != $newpassword2){
-            $change_done = false;
-            return view('pages.changePWD',compact('change_done'));
+        if ($DB_oldpassword != $oldpassword){
+            $old_not_match = true;
+            return view('pages.changePWD',compact('old_not_match'));
+        }
+        elseif ($newpassword != $newpassword2){
+            $not_match=true;
+            return view('pages.changePWD',compact('not_match'));
         }
         else{
-            $DB_data=DB::table('users')->get();
-            foreach ($DB_data as $row){
-                if ($row->account==$account and $row->password==$oldpassword){
-                    DB::table('users')
-                        ->where('account',$account)
-                        ->update([
-                            'password' => $newpassword
-                        ]);
-                    $change_done = true;
-                    return view('pages.changePWD',compact('change_done'));
-                }
-            }
-            $change_done = false;
+            DB::table('users')
+                ->where('account',$account)
+                ->update([
+                    'password' => $newpassword
+                ]);
+            $change_done = true;
             return view('pages.changePWD',compact('change_done'));
         }
     }
