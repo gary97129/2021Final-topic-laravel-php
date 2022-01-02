@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
+        <h1 class="text-center">新增商品</h1>
         <form class="was-validated" action="{{route('store_create_item')}}" method="post">
             @csrf
             <div class="form-row justify-content-center">
