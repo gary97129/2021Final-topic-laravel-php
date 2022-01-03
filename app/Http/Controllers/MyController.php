@@ -26,11 +26,16 @@ class MyController extends Controller
             $pur = DB::table('users')
                 ->where('account', session('account'))
                 ->first();
-            DB::table('users')
-                ->where('account', session('account'))
-                ->update([
-                    'purchased' => $pur->purchased . $add . ","
-                ]);
+
+            $a = explode(',',$pur->purchased);
+            $s = array_search($add , $a);
+            if($s == false){
+                DB::table('users')
+                    ->where('account', session('account'))
+                    ->update([
+                        'purchased' => $pur->purchased . $add . ","
+                    ]);
+            }
         }
         return view('pages.index',compact('data','pa'));
     }
