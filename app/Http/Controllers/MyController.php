@@ -20,7 +20,6 @@ class MyController extends Controller
             $data->orwhere('description','like','%'. $search_content .'%');
         }
         $data = $data->get();
-//        dd($data);
 
         $add = $request -> get('cart');
         if ($add != null){
@@ -39,6 +38,7 @@ class MyController extends Controller
 
     function get_cart_page(Request $request){
         $account = session('account');
+
         $data = DB::table('users')
             ->where('account',$account)
             ->first();
@@ -196,4 +196,25 @@ class MyController extends Controller
     {
         return view('pages.changePWD');
     }
+//    public function delete_data(Request $request)
+//    {
+//        $purchased=DB::table('users')->get('purchased');
+//        $account = session('account');
+//        $data = DB::table('users')
+//            ->where('account',$account)
+//            ->first();
+//        DB::table('users')
+//            ->select()
+//        $purchased=implode(',',$purchased);
+//        echo$purchased;
+////$data = explode(",",($data -> purchased));
+//        DB::table('users')
+//            ->where('purchased',$purchased)
+//            ->dd(123);
+//        $id = $request->get('id');
+//        DB::table('item')
+//            ->where('id',$id)
+//            ->delete();
+//        return redirect()->route('index');
+//    }
 }

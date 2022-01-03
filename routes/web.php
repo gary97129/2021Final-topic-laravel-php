@@ -31,3 +31,5 @@ Route::get('/logout',[\App\Http\Controllers\MyController::class,'logout'])->name
 //changepwd
 Route::get('/changepwd',[\App\Http\Controllers\MyController::class,'get_changepwd_page'])->name('get_changepwd_page');
 Route::post('/changepwd',[\App\Http\Controllers\MyController::class,'changepwd'])->name('changepwd');
+//delete
+//Route::get('/delete/',[\App\Http\Controllers\MyController::class,'delete_data'])->name('delete_data');

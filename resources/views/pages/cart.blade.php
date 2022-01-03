@@ -21,8 +21,9 @@
                         <div class="col-8">
                             <h1 class="card-title">{{$row->name}}</h1>
                         </div>
-                        <div class="col-2">
-
+                        <div>
+                            <button class="btn btn-danger")><h1>刪除</h1></button>
+{{--                            onclick=delete_data({{$row->id}})--}}
                         </div>
                     </div>
                 </div>
@@ -30,5 +31,10 @@
             <button type="button" class="btn btn-outline-danger btn-block btn-lg mt-5 text-center">結帳</button>
         </div>
     @endif
+{{--    <script>--}}
+{{--        function delete_data(id){--}}
+{{--            window.location.href = "{{route('delete_data')}}"+"?id="+id;--}}
+{{--        }--}}
+{{--    </script>--}}
 
 @endsection
