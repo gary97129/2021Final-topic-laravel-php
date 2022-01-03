@@ -196,25 +196,23 @@ class MyController extends Controller
     {
         return view('pages.changePWD');
     }
-//    public function delete_data(Request $request)
-//    {
-//        $purchased=DB::table('users')->get('purchased');
-//        $account = session('account');
-//        $data = DB::table('users')
-//            ->where('account',$account)
-//            ->first();
-//        DB::table('users')
-//            ->select()
-//        $purchased=implode(',',$purchased);
-//        echo$purchased;
-////$data = explode(",",($data -> purchased));
-//        DB::table('users')
-//            ->where('purchased',$purchased)
-//            ->dd(123);
-//        $id = $request->get('id');
-//        DB::table('item')
-//            ->where('id',$id)
-//            ->delete();
-//        return redirect()->route('index');
-//    }
+    public function delete_data(Request $request)
+    {
+        $sub = $request -> get('cartid');
+        if ($sub != null){
+            $pur = DB::table('users')
+                ->where('account', session('account'))
+                ->first();
+
+            $a = explode(',',$pur->purchased);
+            unset($a[array_search($sub , $a)]);
+
+            DB::table('users')
+                ->where('account', session('account'))
+                ->update([
+                    'purchased' =>  join(",",$a)
+                ]);
+        }
+        return redirect() -> route('get_cart_page');
+    }
 }
