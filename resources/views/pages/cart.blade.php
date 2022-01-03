@@ -22,8 +22,15 @@
                             <h1 class="card-title">{{$row->name}}</h1>
                         </div>
                         <div>
+                            <button class="btn btn-info")>-</button>
+                            <h1><span class="badge bg-primary">1</span></h1>
+                            <button class="btn btn-info")>+</button>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
                             <button class="btn btn-danger")><h1>刪除</h1></button>
-{{--                            onclick=delete_data({{$row->id}})--}}
                         </div>
                     </div>
                 </div>
